@@ -27,8 +27,9 @@ class ProductStoreRequest extends FormRequest
             'name' => 'required|max:255',
             'code' => 'required|max:20|unique:products,code,' . $this->product?->id,
             'barcode' => 'required|max:20|unique:products,barcode,' . $this->product?->id,
+            'active' => 'boolean',
             'description' => '',
-            'price' => ''
+            'price' => 'numeric'
         ];
     }
 }
