@@ -30,7 +30,7 @@ class Product extends Model
         $priceMin = request('price_min') ?? $this->min('price');
         $priceMax = request('price_max') ?? $this->max('price');
 
-        $query->whereBetween('price', [(int)$priceMin, (int)$priceMax]);
+        $query->whereBetween('price', [(float)$priceMin, (float)$priceMax]);
     }
 
     /**
